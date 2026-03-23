@@ -1,36 +1,164 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>No-Reply</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            text-align: center;
-            padding: 50px;
-        }
-        .container {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: inline-block;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #666;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>No-Reply</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f8f9fa;
+      --card: #ffffff;
+      --text: #1a1a1a;
+      --text-sec: #555;
+      --accent: #6366f1;
+      --accent-hover: #4f46e5;
+      --border: #e2e8f0;
+      --shadow: 0 10px 38px rgba(0,0,0,0.08);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1217;
+        --card: #161b22;
+        --text: #e2e8f0;
+        --text-sec: #94a3b8;
+        --accent: #a5b4fc;
+        --accent-hover: #c7d2fe;
+        --border: #30363d;
+        --shadow: 0 10px 38px rgba(0,0,0,0.45);
+      }
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 2rem 1rem;
+      line-height: 1.5;
+    }
+
+    .card {
+      background: var(--card);
+      width: 100%;
+      max-width: 380px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+    }
+
+    .header {
+      padding: 2.2rem 2rem 1.8rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(99,102,241,0.04) 0%, transparent 60%);
+    }
+
+    .title {
+      font-size: 2.1rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      color: var(--text);
+    }
+
+    .subtitle {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.95rem;
+      color: var(--accent);
+      margin-top: 0.4rem;
+      font-weight: 400;
+    }
+
+    .content {
+      padding: 1.8rem 2rem 2.2rem;
+      text-align: center;
+    }
+
+    .email {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.05rem;
+      color: var(--text-sec);
+      background: var(--border);
+      display: inline-block;
+      padding: 0.7rem 1.3rem;
+      border-radius: 10px;
+      margin: 0.8rem 0 1.6rem;
+      transition: all 0.2s ease;
+      user-select: all;
+    }
+
+    .email:hover,
+    .email:focus {
+      background: var(--accent);
+      color: white;
+      transform: scale(1.03);
+    }
+
+    .status {
+      font-size: 0.92rem;
+      color: var(--text-sec);
+      max-width: 280px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .footer {
+      padding: 1.4rem 2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--text-sec);
+      text-align: center;
+    }
+
+    @media (max-width: 400px) {
+      .card { border-radius: 0; min-height: 100vh; }
+      .header { padding: 3rem 1.5rem 2rem; }
+      .content { padding: 2rem 1.5rem; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>No-Reply</h1>
-        <p>Correo: NoReply.SinReply@gmail.com</p>
-        <p></p>
+
+  <div class="card">
+    <div class="header">
+      <h1 class="title">No-Reply</h1>
+      <div class="subtitle">sin ruido • sin drama • solo lo necesario</div>
     </div>
+
+    <div class="content">
+      <a href="mailto:NoReply.SinReply@gmail.com" class="email">
+        NoReply.SinReply@gmail.com
+      </a>
+
+      <p class="status">
+        Estado: Libre.
+      </p>
+    </div>
+
+    <div class="footer">
+      No-Reply — v0.78 · 2026
+    </div>
+  </div>
+
 </body>
 </html>
