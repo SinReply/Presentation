@@ -15,7 +15,7 @@ Está diseñada para ser ligera, clara y fácil de usar, con soporte para modo c
 
 ## Licencia
 
-Copyright (c) 2026 SinReply
+Copyright (©) 2026 SinReply
 
 Este software se ofrece bajo los siguientes términos:
 
